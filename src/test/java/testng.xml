@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="tests">
+	<listeners>
+		<listener class-name="com.qa.maven.CustomeListner"></listener>
+	</listeners>
+	<test name="Test1">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="username" value="testuser" />
+		<parameter name="password" value="testpassword" />
+		<classes>
+			<class name="com.qa.maven.FirstTest" />
+			<class name="com.qa.maven.SecondTest" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Test">
+		<parameter name="browser" value="chrome" />
+		<parameter name="username" value="testuser" />
+		<parameter name="password" value="testpassword" />
+		<classes>
+			<class name="com.qa.maven.FirstTest" />
+			<class name="com.qa.maven.SecondTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

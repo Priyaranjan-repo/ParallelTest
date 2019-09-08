@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="password" value="testpassword"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="username" value="testuser"/>
+  <listeners>
+    <listener class-name="com.qa.maven.CustomeListner"/>
+  </listeners>
+  <test name="Test1">
+    <parameter name="password" value="testpassword"/>
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="username" value="testuser"/>
+    <classes>
+      <class name="com.qa.maven.FirstTest"/>
+      <class name="com.qa.maven.SecondTest"/>
+    </classes>
+  </test> <!-- Test1 -->
+  <test name="Test">
+    <parameter name="password" value="testpassword"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="username" value="testuser"/>
+    <classes>
+      <class name="com.qa.maven.FirstTest"/>
+      <class name="com.qa.maven.SecondTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test1(failed)" parallel="tests">
+    <parameter name="password" value="testpassword"/>
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="username" value="testuser"/>
+    <classes>
+      <class name="com.qa.maven.FirstTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="beforeMethod"/>
+          <include name="facebook" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qa.maven.FirstTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test name="Test(failed)" parallel="tests">
+    <parameter name="password" value="testpassword"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="username" value="testuser"/>
+    <classes>
+      <class name="com.qa.maven.SecondTest">
+        <methods>
+          <include name="website" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qa.maven.SecondTest -->
+      <class name="com.qa.maven.FirstTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="beforeMethod"/>
+          <include name="facebook" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.qa.maven.FirstTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
