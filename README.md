@@ -13,6 +13,8 @@ run by bat
 run by windows schedular
 
 --------------------------------------Create bat file------------------------------------------
+
+
 @echo on
 SET PROJECT_PATH=C:\Users\Alkesh\eclipse-workspace\MavenParallel
 
