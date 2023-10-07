@@ -13,8 +13,11 @@ public class SecondTest {
 		try {
 			FirstTest.driver.manage().window().maximize();
 			FirstTest.driver.get("https://www.website.com/sign-in/");
+			FirstTest.driver.findElement(By.id("username")).clear();
 			FirstTest.driver.findElement(By.id("username")).sendKeys(username);
+			FirstTest.driver.findElement(By.id("password")).clear();
 			FirstTest.driver.findElement(By.id("password")).sendKeys(password);
+			Thread.sleep(3000);
 			System.out.println("Title: " + FirstTest.driver.getTitle());
 			Assert.assertTrue(false);
 		} catch (Exception e) {
