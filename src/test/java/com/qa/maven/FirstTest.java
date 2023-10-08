@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 public class FirstTest {
 	public static WebDriver driver;
 
+//pooname
 	@BeforeMethod
 	@Parameters("browser")
 	public void beforeMethod(String browser) {
